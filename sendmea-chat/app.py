@@ -1,4 +1,3 @@
-from langchain_core.messages import AIMessage, HumanMessage
 import os
 import streamlit as st
 from dotenv import load_dotenv
@@ -12,7 +11,7 @@ load_dotenv()
 # Retrieve API keys
 openai_api_key = os.getenv("OPENAI_API_KEY2")
 pinecone_api_key = os.getenv("PINECONE_API_KEY")
-print(openai_api_key)
+
 # Initialize OpenAI embeddings and Pinecone Vector Store
 embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, openai_api_key=openai_api_key)
 document_vectorstore = PineconeVectorStore(index_name=PINECONE_INDEX, embedding=embeddings,
